@@ -36,6 +36,7 @@ const Timer: React.FC = () => {
   
     const resetTimer = () => {
       setTime(0);
+      setHms({hours: 0, minutes: 0, seconds: 0});
       setIsActive(false);
     };
 
@@ -46,16 +47,16 @@ const Timer: React.FC = () => {
       </CardHeader>
       <CardContent className="flex items-center justify-center gap-4 p-6">
         <div className="flex items-center gap-2 text-2xl font-medium">
-          <span>{hms.hours}</span>
+          <span>{hms.hours === 0 ? '00' : hms.hours}</span>
           <span>:</span>
-          <span>{hms.minutes}</span>
+          <span>{hms.minutes === 0 ? '00' : hms.minutes}</span>
           <span>:</span>
-          <span>{hms.seconds}</span>
+          <span>{hms.seconds === 0 ? '00' : hms.seconds}</span>
         </div>
         <div className="flex items-center gap-2">
-          <Button size="sm" onClick={startTimer}>Start</Button>
-          <Button size="sm" onClick={stopTimer}>Pause</Button>
-          <Button size="sm" onClick={resetTimer}>Reset</Button>
+          <Button onClick={startTimer}>Start</Button>
+          <Button onClick={stopTimer}>Pause</Button>
+          <Button onClick={resetTimer}>Reset</Button>
         </div>
       </CardContent>
     </Card>
