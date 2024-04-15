@@ -1,6 +1,5 @@
-// lib/db.js
 import Database from 'better-sqlite3';
-const db = new Database('./mydb.sqlite', { verbose: console.log });
+const db = new Database('times.db', { verbose: console.log });
 
 function initializeDB() {
   const tableSchema = `
@@ -14,5 +13,3 @@ function initializeDB() {
 }
 
 initializeDB();
-
-module.exports = db;
