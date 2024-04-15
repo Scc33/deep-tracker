@@ -1,5 +1,5 @@
 "use client"
-import Timer from "@/components/timer";
+import Timer from "./components/timer";
 import ActivityCalendar from "react-activity-calendar";
 
 export default function Home() {

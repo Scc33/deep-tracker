@@ -1,4 +1,4 @@
-import { hms } from "@/interfaces/timeInterface";
+import { hms } from "../interfaces/timeInterface";
 
 export function secondsToHms(totalSeconds: number): hms {
     const hours = Math.floor(totalSeconds / 3600);

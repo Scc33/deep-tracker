@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { CardHeader, CardContent, Card } from "@mui/material"
 import { Button } from '@mui/material';
-import { hms } from '@/interfaces/timeInterface';
-import { secondsToHms } from '@/utils/time';
+import { hms } from '../interfaces/timeInterface';
+import { secondsToHms } from '../utils/time';
 
 const Timer: React.FC = () => {
     const [time, setTime] = useState<number>(0);
