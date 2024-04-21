@@ -9,6 +9,9 @@ export function addSession(body) {
 }
 
 export function getSessions() {
-  const select = db.prepare('SELECT * FROM sessions');
+  const select = db.prepare(`
+    SELECT DATE(createdAt) as DATE, count(*) as EFFORTS, SUM(duration) as TOTAL_DURATION
+    FROM sessions GROUP BY DATE(createdAt) 
+    ORDER BY createdAt DESC`);
   return select.all();
 }

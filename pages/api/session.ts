@@ -14,6 +14,7 @@ export default function handler(
     res.status(200).json({ id: id });
   } else if (req.method === "GET") {
     const sessions = getSessions();
+    res.status(200).json(sessions);
     return sessions;
   } else {
     res.status(405).end(); // Method Not Allowed
